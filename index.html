@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تسبيح وأذكار - مسبحة إلكترونية وأذكار الصباح والمساء">
+  <title>تسبيح وأذكار</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top"><span class="brand-mark">ذ</span><span><strong>تسبيح وأذكار</strong><small>نورٌ في كل يوم</small></span></a>
+      <nav class="main-nav" aria-label="التنقل الرئيسي">
+        <a class="nav-link active" href="#counter">المسبحة</a>
+        <a class="nav-link" href="#adhkar">الأذكار</a>
+        <a class="nav-link" href="#special-counters">الاستغفار والصلاة</a>
+      </nav>
+      <div class="header-actions"><button id="themeToggle" class="icon-button" type="button" aria-label="تفعيل الوضع الداكن" title="الوضع الداكن">☾</button><button id="resetAll" class="outline-button" type="button">تصفير الكل</button></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero"><div class="container hero-grid"><div><span class="eyebrow">بِسْمِ اللهِ نبدأ</span><h1>اجعل لسانك<br><em>رطبًا بذكر الله</em></h1><p>مساحتك الهادئة للتسبيح والأذكار اليومية، بتجربة بسيطة تحفظ تقدمك وترافقك أينما كنت.</p><a class="hero-button" href="#counter">ابدأ وردك <span>←</span></a></div><div class="verse-box"><span class="verse-symbol">﴿</span><p>أَلَا بِذِكْرِ اللَّهِ<br>تَطْمَئِنُّ الْقُلُوبُ</p><small>سورة الرعد · ٢٨</small></div></div></section>
+
+    <section id="counter" class="section counter-section"><div class="container"><div class="section-title"><span class="eyebrow">المسبحة الإلكترونية</span><h2>اذكر الله في كل وقت</h2><p>اختر الذكر، ثم اضغط على المسبحة مع كل تسبيحة.</p></div><div class="counter-layout"><div class="counter-panel"><div class="counter-head"><span class="status-dot"></span><span>عداد الذكر الحالي</span></div><select id="dhikrSelect" class="dhikr-select" aria-label="اختيار الذكر"><option value="subhanallah">سُبْحَانَ اللَّهِ</option><option value="alhamdulillah">الْحَمْدُ لِلَّهِ</option><option value="allahuakbar">اللَّهُ أَكْبَرُ</option><option value="tahlil">لَا إِلَهَ إِلَّا اللَّهُ</option><option value="istighfar">أَسْتَغْفِرُ اللَّهَ</option></select><div id="mainCount" class="main-count">٠</div><div class="target-row"><span>الهدف الحالي: <b id="targetValue">٣٣</b></span><label class="switch-label"><input id="targetToggle" type="checkbox"><span class="switch"></span> هدف ١٠٠</label></div><button id="mainTap" class="tasbeeh-button" type="button" aria-label="اضغط للتسبيح"><span>اضغط للتسبيح</span><strong>سبّح</strong></button><button id="mainReset" class="small-button" type="button">إعادة العداد</button></div><aside class="saved-counts"><div class="aside-heading"><h3>أورادك المحفوظة</h3><span>كل ذكر بعداد مستقل</span></div><div id="savedCountsList" class="saved-list"></div></aside></div></div></section>
+
+    <section id="adhkar" class="section adhkar-section"><div class="container"><div class="section-title"><span class="eyebrow">وردك اليومي</span><h2>أذكار الصباح والمساء</h2><p>اضغط على بطاقة الذكر لتُنقص العدد المطلوب، واحفظ النص عند الحاجة.</p></div><div class="tabs" role="tablist"><button class="tab-button active" data-tab="morning" role="tab" aria-selected="true" type="button">أذكار الصباح <span id="morningProgressText">٠/٠</span></button><button class="tab-button" data-tab="evening" role="tab" aria-selected="false" type="button">أذكار المساء <span id="eveningProgressText">٠/٠</span></button></div><div class="progress-wrap"><div class="progress-info"><span id="progressLabel">تقدم أذكار الصباح</span><strong id="progressPercent">٠٪</strong></div><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div></div><div id="adhkarCards" class="adhkar-grid"></div></div></section>
+
+    <section id="special-counters" class="section special-section"><div class="container"><div class="section-title"><span class="eyebrow">أوراد خاصة</span><h2>الصلاة على النبي والاستغفار</h2><p>اجعلها عادة يومية، ولكل ورد عداد مستقل محفوظ تلقائيًا.</p></div><div class="special-grid"><article class="special-card salawat-card"><div class="special-icon">ﷺ</div><span class="eyebrow">نورٌ وبركة</span><h3>الصلاة على النبي ﷺ</h3><strong id="salawatCount">٠</strong><button class="special-button" data-counter="salawat" type="button">اللهم صلِّ وسلم عليه</button><button class="small-button" data-reset="salawat" type="button">إعادة العداد</button></article><article class="special-card istighfar-card"><div class="special-icon">أستغفر</div><span class="eyebrow">باب التوبة</span><h3>الاستغفار</h3><strong id="istighfarCount">٠</strong><button class="special-button" data-counter="istighfar" type="button">أستغفر الله</button><button class="small-button" data-reset="istighfar" type="button">إعادة العداد</button></article></div></div></section>
+  </main>
+  <footer><div class="container"><p>تسبيح وأذكار · اللهم اجعلنا من الذاكرين</p><span id="todayDate"></span></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
